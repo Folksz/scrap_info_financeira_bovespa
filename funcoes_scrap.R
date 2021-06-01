@@ -1,4 +1,23 @@
 #Baixa os exceis desejaveis por ano
+
+sufixos_disponiveis=c('',#OUTRAS INFOS , COMO DATA DA DIVULGACAO
+                      'DVA_con', #DEMONSTRACAO DE VALOR ADICIONADO CONSOLIDADO
+                      'DVA_ind', #DEMONSTRACAO DE VALOR ADICIONADO INDIVIDUAL
+                      'DRE_ind', #DEMONSTRACAO DE RESULTADOS INDIVIDUAL
+                      'DRE_con',  #DEMONSTRACAO DE RESULTADOS CONSOLIDADO
+                      'DMPL_ind', #DEMONSTRACAO DAS MUTACOES DO PATRIMONIO LIQUIDO INDIVIDUAL
+                      'DMPL_con', #DEMONSTRACAO DAS MUTACOES DO PATRIMONIO LIQUIDO CONSOLIDADO
+                      'DFC_MD_con', #FLUXO DE CAIXA METODO DIRETO CONSOLIDADO
+                      'DFC_MD_ind', #FLUXO DE CAIXA METODO DIRETO INDIVIDUAL
+                      'DFC_MI_con', #FLUXO DE CAIXA METODO INDIRETO CONSOLIDADO
+                      'DFC_MI_ind', #FLUXO DE CAIXA METODO INDIRETO INDIRETO
+                      'BPA_con', #BALANCO PATRIMONIAL ATIVO CONSOLIDADO
+                      'BPA_ind', #BALANCO PATRIMONIAL ATIVO INDIVIDUAL
+                      'BPP_con', #BALANCO PATRIMONIAL PASSIVO CONSOLIDADO
+                      'BPP_ind',
+                      "distribuicao_capital") #BALANCO PATRIMONIAL PASSIVO INDIVIDUAL)
+
+
 baixar_excel_porano<-function(anos,sufixos_desejaveis,itr_dfp){
   lista=list()
   if(sum(!sufixos_desejaveis %in% sufixos_disponiveis)==0){
@@ -38,10 +57,6 @@ filtrar_empresas_desejadas<-function(lista,empresas){
     lista[[tipo]]=lista[[tipo]]%>%filter(DENOM_CIA %in% empresas)
   }
   return(lista)
-}
-listar_empresas<-function(anos,sufixos_desejaveis){
-  empresas=unique(baixar_excel_porano(c(2020),'',"itr")[['itr_cia_aberta_']]$DENOM_CIA)
-  return(empresas)
 }
 
 
