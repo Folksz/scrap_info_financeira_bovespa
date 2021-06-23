@@ -10,22 +10,20 @@ library("rvest")
 library("RCurl")
 library("stringi")
 library("BatchGetSymbols")
+
+source("crawler_CVM.R")
+source("DRE.R")
+source("BP.R")
+source("setores.R")
+source("ticker_empresa.R")
+source("construir_release.R")
+source("construir_bd.R")
+source("atualizar_ponta.R")
+source("num_acoes.R")
+source("metricas_empresas_pordata.R")
+source("metricas_porempresa.R")
 source("acoes.R")
-source("inicializar.R")
-source("evolucao_por_empresa.R")
 
-source("funcoes_scrap.R")
-source("balanco.R")
-source("dre.R")
-source("scrap_DRE_BPA_BPP.R")
-source("deparas.R")
-source("construir_metricas.R")
-source("metricas_via_preco.R")
-
-
-
-
-  
 
 
 
